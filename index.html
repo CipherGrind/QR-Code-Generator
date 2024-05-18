@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" type="text/css" href="barcode1.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js" integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<body>
+    <div class="header">
+        <h3>QR CODE GENERATOR</h3>
+        
+    </div>
+    <div class="container">
+        <label for="password">Enter Data:</label>
+        <br><br>
+        <input type="text" id="password" placeholder="Enter Data">
+        <br><br><br>
+        <button onclick="generateBarcode()">Generate QR Code</button>
+        <button onclick="openSettings()">Settings</button>
+        <button onclick="clearBarcode()">Clear Barcode</button>
+        <button onclick="clearData()">Clear Data</button>
+        
+    </div>
+    <div class="container2">
+        <h3>QR CODE</h3>
+        <div id="barcode" class="barcode"></div>
+    </div>
+
+    <!-- Settings pop-out window -->
+    <div id="settingsPopup" class="popup">
+        <div class="closeMenu" id="closeMenuButton" onclick="closeSettings()" >
+            <span height="100%" width="100%"> CLOSE SETTINGS </span>
+        </div>
+        <div class="popup-content">
+            <label for="sizeSelect">Select QR Code Size: </label>
+            <br><br>
+            <div id="sizeButtons">
+                <button class="selected" onclick="selectSize(this, 128)">Small - 128 px</button>
+                <br>
+                <button class="" onclick="selectSize(this, 256)">Medium - 256 px</button>
+                <br>
+                <button class="" onclick="selectSize(this, 512)">Large - 512 px</button>
+                <br>
+                <button class="" onclick="selectSize(this, 1024)">X-Large - 1024 px</button>
+            </div>
+
+            <br><br><br><br>
+
+        </div>
+        <div class="closeMenu" id="closeMenuButton" onclick="closeSettings()" >
+            <span height="100%" width="100%"> CLOSE SETTINGS </span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h5>created by: Jonathan Levin</h5>
+    </div>
+
+    <script src="barcode1.js"></script>
+</body>
+</html>
